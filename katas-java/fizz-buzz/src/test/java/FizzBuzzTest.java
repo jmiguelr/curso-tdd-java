@@ -1,40 +1,70 @@
 
-import java.util.ArrayList;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.util.List;
-import java.util.stream.IntStream;
 import org.junit.jupiter.api.Test;
 
 public class FizzBuzzTest {
 
 
-    @Test
-  public void fix_me_and_rename_me() {
+  @Test
+  public void testFizz() {
 
     // Given
-/*
-    List<Integer> list = new ArrayList<>();
-    for (int i = 1; i < 101; i++) {
-      list.add(i);
-    }
-*/
     // When
-    List<String> result =  FizzBuzzClass.doTheCode(); //
-
+    List<String> result = FizzBuzzClass.doTheCode(); //
     // Then
     for (int i = 0; i < 100; i++) {
-      if (i % 3 ==0) {
-        result.get(i).contains("Fizz");
+      if (i + 1 % 3 == 0) {
+        assertTrue(result.get(i).equals("Fizz"));
       }
-      if (i % 5 == 0) {
-        result.get(i).contains("Buzz");
-      }
+    }
+  }
 
-      if (i % 3 != 0 && i % 5 != 0) {
-        result.get(i).contains(Integer.toString(i));
+  @Test
+  public void testBuzz() {
+
+    // Given
+    // When
+    List<String> result = FizzBuzzClass.doTheCode(); //
+    // Then
+    for (int i = 0; i < 100; i++) {
+      if (i + 1 % 5 == 0) {
+        assertTrue(result.get(i).equals("Buzz"));
+      }
+    }
+  }
+
+  @Test
+  public void testNumber() {
+
+    // Given
+    // When
+    List<String> result = FizzBuzzClass.doTheCode(); //
+
+    // Then
+    assertTrue( result.get(2).equals("Fizz"));
+    assertTrue( result.get(4).equals("Buzz"));
+    assertTrue( result.get(14).equals("FizzBuzz"));
+
+/*
+
+
+    for (int i = 0; i < 100; i++) {
+      if (i + 1 % 3 != 0 && i + 1 % 5 != 0) {
+        assertTrue(result.get(i).equals(Integer.toString(i)));
       }
 
     }
-
-
+*/
   }
+
+
+  @Test
+  public void testSize() {
+    // assertFizzBuzzClass.doTheCode()
+  }
+
+  // private getElement( List<String> )
+
 }
